@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="18yo Freelance Web Developer passionate about technology, building modern responsive websites, and dedicated to covering all of your digital needs." />
+  
+  <!-- REPLACE: Browser tab title with your name -->
+  <title>Freelance Web Developer — Portfolio</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Inline script to prevent theme flash (FOUT) -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('portfolio-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+      document.documentElement.setAttribute('data-theme', initialTheme);
+    })();
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       HEADER / NAVIGATION
+       Sticky top bar with navigation links, theme toggle, and mobile menu
+       ========================================================================= -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <!-- REPLACE: Your logo initials and name -->
+      <a href="#hero" class="brand-logo" aria-label="Home">
+        <span class="logo-mark">&lt;/&gt;</span>
+        <span class="logo-text">Yasser<span class="accent-dot">.dev</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="nav-menu" id="nav-menu" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#about" class="nav-link">About</a>
+          </li>
+          <li class="nav-item">
+            <a href="#projects" class="nav-link">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Header Actions (Theme Toggle & Mobile Menu Button) -->
+      <div class="header-actions">
+        <!-- Light / Dark Theme Switcher -->
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle light/dark theme">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="mobile-menu-toggle" class="mobile-toggle-btn" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================================================================
+         HERO SECTION
+         Intro headline, tagline, 2-sentence bio, CTAs & profile avatar
+         ========================================================================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content reveal">
+          <!-- Status pill badge -->
+          <div class="status-badge">
+            <span class="status-dot"></span>
+            <!-- REPLACE: Your availability status -->
+            <span>18yo Freelance Web Developer • Open for Projects</span>
+          </div>
+
+          <!-- REPLACE: Your name and profession -->
+          <h1 class="hero-headline">
+            Hi, I'm <span class="text-accent">Yasser</span> — 18yo Freelance Web Developer.
+          </h1>
+
+          <!-- REPLACE: Short 2-sentence bio highlighting your mindset -->
+          <p class="hero-bio">
+            I'm deeply passionate about technology and development. I chose web development because the world truly needs it! While I'm early in my journey, I am actively taking on real-world projects, learning relentlessly every single day, and dedicated to covering all of your digital needs.
+          </p>
+
+          <!-- Primary Call-to-Action Buttons -->
+          <div class="hero-cta-group">
+            <a href="#contact" class="btn btn-primary">
+              <span>Get in Touch</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <a href="#projects" class="btn btn-secondary">
+              <span>View My Work</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Hero Avatar / Profile Placeholder -->
+        <div class="hero-avatar-wrapper reveal">
+          <div class="avatar-card">
+            <!-- REPLACE: Replace the SVG placeholder below with an <img> tag if you have a photo, e.g.:
+                 <img src="path/to/profile.jpg" alt="Profile portrait" class="avatar-image" /> -->
+            <div class="avatar-placeholder" aria-label="Profile avatar placeholder">
+              <svg viewBox="0 0 160 160" width="140" height="140" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+                <circle cx="80" cy="80" r="76" stroke="currentColor" stroke-width="2" stroke-dasharray="6 6" class="avatar-ring" />
+                <circle cx="80" cy="62" r="28" fill="currentColor" fill-opacity="0.25" stroke="currentColor" stroke-width="2" />
+                <path d="M38 128C38 105.909 55.9086 88 78 88H82C104.091 88 122 105.909 122 128" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </div>
+            <!-- Decorative badge on avatar -->
+            <div class="avatar-floating-badge">
+              <span class="badge-icon">🚀</span>
+              <span>18yo • Fast Learner</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         ABOUT ME SECTION
+         Concise summary, key passions, and interactive/styled skill chips
+         ========================================================================= -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">My Journey & Mindset</p>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="about-grid">
+          <!-- Biography Text Column -->
+          <div class="about-narrative reveal">
+            <!-- REPLACE: Your personal summary and story -->
+            <p>
+              I am an <strong>18-year-old freelance web developer</strong> with a big passion for technology in general and software development specifically. I chose web development because the world genuinely needs it—every idea, business, and creator needs a clean and responsive digital home.
+            </p>
+            <p>
+              I may still be a beginner, but I believe the greatest way to master something is by throwing myself into real projects. I am putting myself out there as a freelancer so I can gain hands-on experience, learn rapidly on the job, and build the required skills to <strong>cover all of your needs</strong>.
+            </p>
+            <p>
+              What I lack in years of seniority, I make up for with dedication, energy, curiosity, and an obsession with delivering clean, working solutions that make clients happy.
+            </p>
+
+            <!-- Quick Stats -->
+            <div class="stats-row">
+              <div class="stat-card">
+                <span class="stat-number">18yo</span>
+                <span class="stat-label">Driven Freelancer</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Dedication to Your Needs</span>
+              </div>
+              <div class="stat-card">
+                <span class="stat-number">Daily</span>
+                <span class="stat-label">Continuous Learning</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Skills & Tooling Chips Column -->
+          <div class="about-skills reveal">
+            <h3 class="skills-heading">What I Know & Am Learning</h3>
+            <p class="skills-subtext">Click or hover over any skill to highlight it:</p>
+
+            <!-- Interactive Skill Tag Chips -->
+            <div class="skills-container" id="skills-list">
+              <!-- REPLACE / ADD: Your technical competencies -->
+              <span class="skill-chip" data-category="frontend">HTML5 Semantic</span>
+              <span class="skill-chip" data-category="frontend">CSS3 (Flexbox & Grid)</span>
+              <span class="skill-chip" data-category="frontend">JavaScript (ES6+)</span>
+              <span class="skill-chip" data-category="frontend">Responsive Web Design</span>
+              <span class="skill-chip" data-category="frontend">Mobile-First Layouts</span>
+              <span class="skill-chip" data-category="tools">Git & GitHub</span>
+              <span class="skill-chip" data-category="tools">Clean Code Principles</span>
+              <span class="skill-chip" data-category="design">UI/UX Basics</span>
+              <span class="skill-chip" data-category="tools">Web Accessibility (a11y)</span>
+              <span class="skill-chip" data-category="growth">Fast Learner</span>
+              <span class="skill-chip" data-category="growth">Problem Solving</span>
+              <span class="skill-chip" data-category="learning">Frontend Frameworks (Learning)</span>
+              <span class="skill-chip" data-category="learning">REST APIs (Practicing)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         HIGHLIGHTS / PROJECTS SECTION
+         Clean grid of project cards with tech tags, descriptions & dummy links
+         ========================================================================= -->
+    <section class="section projects-section" id="projects">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Portfolio</p>
+          <h2 class="section-title">Featured Highlights & Projects</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- ================= PROJECT CARD 1 ================= -->
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <div class="project-preview-mockup gradient-1">
+                <div class="mockup-browser-bar">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="mockup-content">
+                  <span class="mockup-icon">🌐</span>
+                  <span class="mockup-title">Business Website</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS Grid</span>
+                <span class="tag">Responsive</span>
+              </div>
+
+              <!-- REPLACE: Project 1 title and details -->
+              <h3 class="project-title">Modern Business Landing Page</h3>
+              <p class="project-description">
+                A clean, mobile-first showcase website built to help clients and small businesses establish a trustworthy online presence with fast load times and intuitive navigation.
+              </p>
+
+              <!-- REPLACE: Replace '#' with your live demo and code links -->
+              <div class="project-links">
+                <a href="#" class="project-link primary" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="#" class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                  <span>Source Code</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= PROJECT CARD 2 ================= -->
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <div class="project-preview-mockup gradient-2">
+                <div class="mockup-browser-bar">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="mockup-content">
+                  <span class="mockup-icon">⚡</span>
+                  <span class="mockup-title">Interactive Tool</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="tag">Vanilla JS</span>
+                <span class="tag">DOM Manipulation</span>
+                <span class="tag">LocalStorage</span>
+              </div>
+
+              <!-- REPLACE: Project 2 title and details -->
+              <h3 class="project-title">Project & Budget Cost Estimator</h3>
+              <p class="project-description">
+                An interactive web application helping freelance clients estimate project requirements, feature costs, and timelines in real time with immediate visual calculations.
+              </p>
+
+              <!-- REPLACE: Replace '#' with your live demo and code links -->
+              <div class="project-links">
+                <a href="#" class="project-link primary" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="#" class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                  <span>Source Code</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= PROJECT CARD 3 ================= -->
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <div class="project-preview-mockup gradient-3">
+                <div class="mockup-browser-bar">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="mockup-content">
+                  <span class="mockup-icon">🎨</span>
+                  <span class="mockup-title">UI & Theme Switcher</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="tag">CSS Variables</span>
+                <span class="tag">Dark / Light</span>
+                <span class="tag">UI/UX</span>
+              </div>
+
+              <!-- REPLACE: Project 3 title and details -->
+              <h3 class="project-title">Personal Showcase & Theme Hub</h3>
+              <p class="project-description">
+                A single-page portfolio template built from scratch with pure HTML, modern CSS styling tokens, and Vanilla JS, optimized for performance and responsive across all devices.
+              </p>
+
+              <!-- REPLACE: Replace '#' with your live demo and code links -->
+              <div class="project-links">
+                <a href="#" class="project-link primary" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="#" class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                  <span>Source Code</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- ================= PROJECT CARD 4 ================= -->
+          <article class="project-card reveal">
+            <div class="project-card-header">
+              <div class="project-preview-mockup gradient-4">
+                <div class="mockup-browser-bar">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+                <div class="mockup-content">
+                  <span class="mockup-icon">📡</span>
+                  <span class="mockup-title">API Integration</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="project-card-body">
+              <div class="project-tags">
+                <span class="tag">Fetch API</span>
+                <span class="tag">Async / Await</span>
+                <span class="tag">Error Handling</span>
+              </div>
+
+              <!-- REPLACE: Project 4 title and details -->
+              <h3 class="project-title">Dynamic Data & Weather Explorer</h3>
+              <p class="project-description">
+                A hands-on web application practicing asynchronous JavaScript, querying public REST APIs, and gracefully handling loading and error states for real-time data display.
+              </p>
+
+              <!-- REPLACE: Replace '#' with your live demo and code links -->
+              <div class="project-links">
+                <a href="#" class="project-link primary" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <a href="#" class="project-link secondary" target="_blank" rel="noopener noreferrer">
+                  <span>Source Code</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         CONTACT & SOCIALS SECTION
+         Interactive contact form with validation + social media links
+         ========================================================================= -->
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <p class="section-kicker">Get In Touch</p>
+          <h2 class="section-title">Let's Work Together</h2>
+          <div class="section-divider"></div>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Information & Social Links -->
+          <div class="contact-info reveal">
+            <h3 class="contact-subtitle">Have a project, website idea, or want to talk?</h3>
+            <p class="contact-description">
+              I chose web development because the world genuinely needs it! Whether you need a fresh website, responsive adjustments, or a driven 18yo developer ready to learn fast and cover your project needs—I'd love to hear from you.
+            </p>
+
+            <div class="direct-contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <strong>Location:</strong>
+                <!-- REPLACE: Your location -->
+                <p>San Francisco, CA (Open to Remote)</p>
+              </div>
+            </div>
+
+            <div class="direct-contact-item">
+              <span class="contact-icon">✉️</span>
+              <div>
+                <strong>Email:</strong>
+                <!-- REPLACE: Your email address -->
+                <p><a href="mailto:yasserbelkhalfi@gmail.com" class="text-link">yasserbelkhalfi@gmail.com</a></p>
+              </div>
+            </div>
+
+            <!-- Social Media Icon Links -->
+            <div class="social-channels">
+              <h4 class="socials-heading">Connect with me:</h4>
+              <div class="social-links-list">
+                <!-- REPLACE: Link to your GitHub profile -->
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                  <span>GitHub</span>
+                </a>
+
+                <!-- REPLACE: Link to your LinkedIn profile -->
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                  </svg>
+                  <span>LinkedIn</span>
+                </a>
+
+                <!-- REPLACE: Link to your Twitter/X profile -->
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Twitter / X Profile">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                  </svg>
+                  <span>Twitter/X</span>
+                </a>
+
+                <!-- REPLACE: Direct email link -->
+                <a href="mailto:yasserbelkhalfi@gmail.com" class="social-btn" aria-label="Direct Email">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Form Container -->
+          <div class="contact-form-container reveal">
+            <!-- Form Success Message Toast / Box (Hidden by default) -->
+            <div id="form-feedback" class="form-feedback hidden" role="alert" aria-live="polite">
+              <div class="feedback-icon">✓</div>
+              <div class="feedback-content">
+                <h4 class="feedback-title">Message sent successfully!</h4>
+                <p class="feedback-message">Thanks for reaching out, <span id="feedback-sender-name">there</span>. I will get back to you shortly.</p>
+              </div>
+            </div>
+
+            <form id="contact-form" class="contact-form" novalidate>
+              <!-- Name Input -->
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Your Name <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    class="form-input"
+                    placeholder="e.g. Sarah Jenkins"
+                    required
+                    autocomplete="name"
+                  />
+                </div>
+                <span class="field-error" id="name-error">Please enter your name.</span>
+              </div>
+
+              <!-- Email Input -->
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    class="form-input"
+                    placeholder="e.g. sarah@example.com"
+                    required
+                    autocomplete="email"
+                  />
+                </div>
+                <span class="field-error" id="email-error">Please enter a valid email address.</span>
+              </div>
+
+              <!-- Message Input -->
+              <div class="form-group">
+                <label for="contact-message" class="form-label">Your Message <span class="required">*</span></label>
+                <div class="input-wrapper">
+                  <textarea
+                    id="contact-message"
+                    name="message"
+                    rows="5"
+                    class="form-input form-textarea"
+                    placeholder="Tell me about your project, timeline, or just say hello..."
+                    required
+                  ></textarea>
+                </div>
+                <span class="field-error" id="message-error">Please write a short message.</span>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" id="submit-btn" class="btn btn-primary btn-block">
+                <span class="btn-text">Send Message</span>
+                <svg class="send-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       FOOTER
+       Copyright notice & Back to top button
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-copy">
+        <!-- REPLACE: Replace with your own name -->
+        <p>&copy; <span id="current-year">2026</span> Yasser. All rights reserved.</p>
+        <p class="footer-subtext">Designed &amp; built with pure HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      </div>
+
+      <!-- Back to Top Button -->
+      <button id="back-to-top" class="back-to-top-btn" type="button" aria-label="Back to top of page">
+        <span>Back to Top</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
